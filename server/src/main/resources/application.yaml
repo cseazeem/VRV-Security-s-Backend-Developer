@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: server
+  datasource:
+    url: jdbc:h2:mem:test_db
+    username: sa
+    password:
+
+  security:
+    user:
+      name: cseazeem
+      password: cseazeem
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+      path: /console
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+
+
+server:
+  port: 8080
+
+api:
+  endpoints:
+    base-url: /api/v2
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /docs
+
+app:
+  security:
+    jwtSecret: simplekeyforyourjwtgenerationandhowlongitshouldbe
+    jwtExpiration: 3000000
